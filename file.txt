@@ -1,0 +1,3 @@
+bitbucket.btk.bg:8443
+jira.btk.bg:8443
+ecommercetest.vivacom.bg:443
