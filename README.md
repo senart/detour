@@ -14,7 +14,8 @@ In order to get it going, you need 3 things:
 
 ### 1. Prepare Input File
 
-The input file is a newline separted file containing the destination hosts and their ports, for example a `file.txt`:
+The input file is a newline separted file containing the destination hosts and their ports, for example a `file.txt`.
+If no file is given as input, by default the script uses the `file.txt` in the local directory.
 
 ```
 private.server.com:8443
