@@ -96,7 +96,7 @@ def cli():
 
 
 @cli.command()
-@click.argument('input', type=click.Path(exists=True))
+@click.option('-i', '--input-file', 'input', type=click.Path(exists=True), default='./file.txt', show_default=True)
 @click.option('-s', '--server', help='A server to use for SSH tunneling', required=True)
 @click.option('--host-file', 'hosts_file', default='/etc/hosts', show_default=True)
 def start(input, server, hosts_file):
@@ -110,7 +110,7 @@ def start(input, server, hosts_file):
 
 
 @cli.command()
-@click.argument('input', type=click.Path(exists=True))
+@click.option('-i', '--input-file', 'input', type=click.Path(exists=True), default='./file.txt', show_default=True)
 @click.option('-s', '--server', help='A server to use for SSH tunneling', required=True)
 @click.option('--host-file', 'hosts_file', default='/etc/hosts', show_default=True)
 def stop(input, server, hosts_file):
