@@ -47,8 +47,13 @@ $ sudo python3 detour.py stop ./file.txt -s username@myserver.com
     ```
 
 ## TODO:
+* Add `--k` flag for optionaly specifying public ssh key.
 * Figure out a way to use `sudo` only for the commands that require it - editing `/etc/hosts/` and calling `ifconfig`. Might need to refactor code in multiple files.
-* Make the `stop` command not required - e.g. run in interactive mode and kill with CTRL+C
-* Add `--k` flag for specifying public ssh key.
+* Handle errors more appropriately - e.g. running `start` twice shouldn't crash the app.
+* Store the ssh socket file `ssh-control-socket` somewhere in `/tmp`.
+* Test on Ubuntu.
+* Port to Windows (add checks for `/etc/hosts` and `ifconfig` commands)
+* Make the `stop` command not required - e.g. run in interactive mode and kill with CTRL+C.
+* Add a `status` command that shows more info for the current SSH session - ssh sockets supports this.
 * Maybe refactor to use [Paramiko](https://github.com/paramiko/paramiko)?
 * Use `venv` and `setuptools` to package the app like the [Click guys suggest](https://click.palletsprojects.com/en/7.x/quickstart/#switching-to-setuptools), possibly distribute to pip3.
