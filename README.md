@@ -45,3 +45,10 @@ $ sudo python3 detour.py stop ./file.txt -s username@myserver.com
     $ ps aux | grep ssh
     $ sudo kill <PID of ssh session>
     ```
+
+## TODO:
+* Figure out a way to use `sudo` only for the commands that require it - editing `/etc/hosts/` and calling `ifconfig`. Might need to refactor code in multiple files.
+* Make the `stop` command not required - e.g. run in interactive mode and kill with CTRL+C
+* Add `--k` flag for specifying public ssh key.
+* Maybe refactor to use [Paramiko](https://github.com/paramiko/paramiko)?
+* Use `venv` and `setuptools` to package the app like the [Click guys suggest](https://click.palletsprojects.com/en/7.x/quickstart/#switching-to-setuptools), possibly distribute to pip3.
