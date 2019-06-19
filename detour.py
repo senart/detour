@@ -37,8 +37,8 @@ def read_input(input_file):
 	return hosts
 
 
-def ssh_start_command(server, ssh_key, hosts):
-	return f'ssh -i {ssh_key} -M -S ssh-control-socket -fnNT {server} ' + ' '.join([f'-L {host.alias_ip}:{host.port}:{host.url}:{host.port}' for host in hosts])
+def ssh_start_command(server, hosts):
+	return f'ssh -i ~/.ssh/id_rsa -M -S ssh-control-socket -fnNT {server} ' + ' '.join([f'-L {host.alias_ip}:{host.port}:{host.url}:{host.port}' for host in hosts])
 
 
 def ssh_stop_command(server):
@@ -98,15 +98,14 @@ def cli():
 @cli.command()
 @click.argument('input', type=click.Path(exists=True))
 @click.option('-s', '--server', help='A server to use for SSH tunneling', required=True)
-@click.option('-k', '--ssh-key', help='SSH Key path', type=click.Path(exists=True), required=True)
-@click.option('--hosts-file', default='/etc/hosts', show_default=True)
-def start(input, server, ssh_key, hosts_file):
+@click.option('--host-file', 'hosts_file', default='/etc/hosts', show_default=True)
+def start(input, server, hosts_file):
 	click.echo("Starting script...")
 
 	hosts = read_input(input)
 
-	execute_command(ssh_start_command(server, ssh_key, hosts))
 	execute_command(add_alias_command(hosts))
+	execute_command(ssh_start_command(server, hosts))
 	append_hosts_file(hosts_file, hosts)
 
 
