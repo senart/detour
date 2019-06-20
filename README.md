@@ -30,14 +30,14 @@ ssh.cool.net:9999
 Issue `start` to open an SSH tunnel like this:
 
 ```shell
-$ sudo python3 detour.py start ./file.txt -s username@myserver.com
+$ sudo python3 detour.py start -i ./file.txt -s username@myserver.com
 ```
 The `./file.txt` is the Input File with the specified domain entries.
 
 In order to stop the SSH tunnel and clear up the `/etc/hosts`, use `stop`:
 
 ```shell
-$ sudo python3 detour.py stop ./file.txt -s username@myserver.com
+$ sudo python3 detour.py stop -i ./file.txt -s username@myserver.com
 ```
 
 ## Known issues
