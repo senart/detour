@@ -2,6 +2,8 @@
 
 This script create an `SSH tunnel` with local port forwarding for the specified domain entries. It also updates the `/etc/hosts` file and adds an alias with `ifconfig`, so that connections to the specified domains are possible.
 
+Tested only on `macos`.
+
 ## Example Usage
 
 To get help for `detour.py` simply run `python3 detour.py --help`.
