@@ -1,5 +1,6 @@
 # Detour files
 ssh-control-socket
+file.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
