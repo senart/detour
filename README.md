@@ -59,4 +59,5 @@ $ sudo python3 detour.py stop -i ./file.txt -s username@myserver.com
 * Make the `stop` command not required - e.g. run in interactive mode and kill with CTRL+C.
 * Add a `status` command that shows more info for the current SSH session - ssh sockets supports this.
 * Maybe refactor to use [Paramiko](https://github.com/paramiko/paramiko)?
-* Use `venv` and `setuptools` to package the app like the [Click guys suggest](https://click.palletsprojects.com/en/7.x/quickstart/#switching-to-setuptools), possibly distribute to pip3.
+* Use `venv` and `setuptools` to package the app like the [Click guys suggest](https://click.palletsprojects.com/en/7.x/quickstart/#switching-to-setuptools), possibly distribute via pip.
+* Use a proper color formatting scheme.
