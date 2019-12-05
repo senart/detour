@@ -1,6 +1,6 @@
 # Detour v.0.0.1
 
-This script create an `SSH tunnel` with local port forwarding for the specified domain entries. It also updates the `/etc/hosts` file and adds an alias with `ifconfig`, so that connections to the specified domains are possible.
+This script creates an `SSH tunnel` with local port forwarding for the specified domain entries. It also updates the `/etc/hosts` file and adds an alias with `ifconfig`, so that connections to the specified domains are possible.
 
 Tested only on `macos`.
 
